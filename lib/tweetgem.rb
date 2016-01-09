@@ -1,13 +1,12 @@
 require 'httparty'
+require_relative 'auth/appauth'
 
 class Tweetapi
-  
+
   def initialize()
-  end
-    
-  def tempReq()
-    response = HTTParty.get('https://api.github.com/users/mbad0la')
-    puts response.body
+    appauthInit()
   end
   
 end
+
+instance = Tweetapi.new
