@@ -1,14 +1,17 @@
-require "http"
 require_relative "./auth/appauth"
 
-class Tweetapi
+class TweetApi
+  
+  attr_reader :me, :recent_followers
   
   def initialize(username,token = nil)
-    token ||= Appauth::init
+    token ||= AppAuth::init
     @bearer = token
-    puts Appauth::user_timeline(@bearer,username)
+    @me = AppAuth::user_show(@bearer,username)
+    @recent_followers = AppAuth::user_recent_followers(@bearer,username)
   end
   
 end
 
-#instance = Tweetapi.new("mbad0la")
+#instance = TweetApi.new("mbad0la")
+#puts instance.recent_followers
