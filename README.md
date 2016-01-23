@@ -13,7 +13,7 @@ Twitter API methods for much productivity!
 ### Introduction
 
 ```ruby
-instance = TweetApi("mbad0la")
+instance = TweetApi.new("mbad0la")
 puts instance.me
 #{"name"=>"Mayank Badola", "screen_name"=>"mbad0la", "description"=>"", "url"=>nil, "profile_pic"=>"https://abs.twimg.com/sticky/default_profile_images/default_profile_3_normal.png", "followers"=>5, "friends"=>82}
 puts instance.user_show("sindresorhus",false)
